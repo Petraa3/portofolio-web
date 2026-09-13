@@ -1,28 +1,47 @@
-/* Container pembungkus di pojok bawah/atas */
+/* Container pembungkus di pojok kanan bawah/atas */
 .petra-trigger-wrapper {
   position: fixed;
-  top: 9%;
-  right: 5%;
+  bottom: 24px;
+  right: 20px;
   z-index: 1000;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* Container Popup Window Chatbot */
+@media (min-width: 768px) {
+  .petra-trigger-wrapper {
+    top: 9%;
+    right: 5%;
+    bottom: auto;
+  }
+}
+
+/* Container Popup Window Chatbot - Responsif Mobile */
 .petra-chat-popup {
   position: fixed;
-  top: calc(9% + 86px);
-  right: 5%;
-  width: 480px;
-  max-width: 90vw;
-  height: 78vh;
-  max-height: 720px;
+  bottom: 96px;
+  right: 16px;
+  left: 16px;
+  width: auto;
+  height: 75vh;
+  max-height: 650px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   z-index: 999;
   animation: petraPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .petra-chat-popup {
+    left: auto;
+    top: calc(9% + 86px);
+    bottom: auto;
+    right: 5%;
+    width: 440px;
+    height: 78vh;
+  }
 }
 
 @keyframes petraPopIn {
@@ -36,14 +55,20 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(139, 92, 246, 0.3);
   color: #F3F4F6;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   animation: floatTooltip 3s ease-in-out infinite;
   pointer-events: none;
   white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+  .petra-tooltip {
+    display: none; /* Disembunyikan di layar HP kecil agar tidak menutupi tombol */
+  }
 }
 
 .petra-tooltip .sparkle {
@@ -54,8 +79,8 @@
 /* Tombol Floating AI */
 .petra-floating-btn {
   position: relative;
-  width: 68px;
-  height: 68px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: linear-gradient(135deg, #A78BFA 0%, #6D28D9 100%);
   color: white;
@@ -69,8 +94,15 @@
   animation: floatBtn 4s ease-in-out infinite;
 }
 
+@media (min-width: 640px) {
+  .petra-floating-btn {
+    width: 68px;
+    height: 68px;
+  }
+}
+
 .petra-floating-btn:hover {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.08) rotate(5deg);
   box-shadow: 0 15px 35px rgba(139, 92, 246, 0.7);
 }
 
@@ -81,9 +113,15 @@
 }
 
 .btn-icon {
-  font-size: 26px;
+  font-size: 22px;
   z-index: 2;
   transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .btn-icon {
+    font-size: 26px;
+  }
 }
 
 .petra-floating-btn:hover .btn-icon {
@@ -114,12 +152,12 @@
 /* Keyframes Animasi */
 @keyframes floatBtn {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes floatTooltip {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-4px); }
 }
 
 @keyframes ringPulse {

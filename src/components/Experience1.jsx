@@ -8,8 +8,7 @@ import {
   ExternalLink, 
   X, 
   CheckCircle2,
-  GitCommit,
-  GitBranch
+  GitCommit
 } from 'lucide-react';
 
 const experiencesData = [
@@ -64,11 +63,6 @@ const experiencesData = [
     period: 'Des 2023 – Des 2024',
     icon: Users,
     shortSummary: 'Bertanggung jawab atas perencanaan, produksi media digital, serta perancangan ulang situs web resmi untuk meningkatkan efektivitas komunikasi publik organisasi.',
-    keyStats: [
-      { label: 'Durasi Khidmat', value: '1 Tahun' },
-      { label: 'Redesign Portal', value: 'WordPress' },
-      { label: 'Peningkatan UX', value: 'Signifikan' }
-    ],
     tags: ['Figma', 'Canva', 'CapCut', 'WordPress', 'UX Redesign', 'Content Strategy'],
     framingQuote: 'Pengalaman ini melatih kemampuan komunikasi publik, manajemen proyek, dan kolaborasi tim di luar konteks teknis.',
     hasDetailModal: false
@@ -85,25 +79,26 @@ export default function Experience() {
   });
 
   return (
-    <section id="experience" className="relative py-24 text-[#c9d1d9] px-6 md:px-12 overflow-hidden bg-transparent">
+    <section id="experience" className="relative py-16 md:py-24 text-[#c9d1d9] px-4 sm:px-6 md:px-12 overflow-hidden bg-transparent">
       
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-5xl mx-auto space-y-10 md:space-y-12">
         
         {/* Section Header & GitHub Tab Filter */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#ffff] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6 md:pb-8">
           <div className="space-y-2">
-            <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif" }}
-            className="text-3xl md:text-5xl font-bold tracking-tight text-[#f0f6fc]">
+            <h2 
+              style={{ fontFamily: "'Trebuchet MS', sans-serif" }}
+              className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-[#f0f6fc]"
+            >
               Pengalaman Professional
             </h2>
           </div>
 
           {/* Tab Filter Button ala GitHub Sub-nav */}
-          <div className="flex items-center gap-1 bg-[#161b22] p-1 rounded-xl border border-[#ffff] w-fit">
+          <div className="flex items-center gap-1 bg-[#161b22] p-1 rounded-xl border border-white/10 w-fit">
             <button
               onClick={() => setActiveTab('all')}
-              style={{ fontFamily: "Arial, sans-serif" }}
-              className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === 'all' 
                   ? 'bg-[#21262d] text-[#f0f6fc] border border-[#8b949e]/40' 
                   : 'text-[#8b949e] hover:text-[#c9d1d9]'
@@ -113,8 +108,7 @@ export default function Experience() {
             </button>
             <button
               onClick={() => setActiveTab('tech')}
-              style={{ fontFamily: "Arial, sans-serif" }}
-              className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === 'tech' 
                   ? 'bg-[#21262d] text-[#f0f6fc] border border-[#8b949e]/40' 
                   : 'text-[#8b949e] hover:text-[#c9d1d9]'
@@ -124,8 +118,7 @@ export default function Experience() {
             </button>
             <button
               onClick={() => setActiveTab('leadership')}
-              style={{ fontFamily: "Arial, sans-serif" }}
-              className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === 'leadership' 
                   ? 'bg-[#21262d] text-[#f0f6fc] border border-[#8b949e]/40' 
                   : 'text-[#8b949e] hover:text-[#c9d1d9]'
@@ -137,12 +130,10 @@ export default function Experience() {
         </div>
 
         {/* Timeline Container (Gaya GitHub Commit Line) */}
-        <div className="relative border-l-2 border-[#30363d] ml-3 md:ml-6 space-y-10 pl-6 md:pl-10">
+        <div className="relative border-l-2 border-[#30363d] ml-3 md:ml-6 space-y-8 md:space-y-10 pl-5 sm:pl-6 md:pl-10">
           
           <AnimatePresence mode="wait">
             {filteredExperiences.map((exp) => {
-              const IconComponent = exp.icon;
-
               return (
                 <motion.div
                   key={exp.id}
@@ -153,24 +144,22 @@ export default function Experience() {
                   className="relative group"
                 >
                   {/* Timeline Node Icon (GitHub Commit Icon Node) */}
-                  <div className="absolute -left-[31px] md:-left-[47px] top-0 p-2 rounded-xl border border-[#30363d] bg-[#0d1117] text-[#238636] shadow-md">
-                    <GitCommit size={18} />
+                  <div className="absolute -left-[27px] sm:-left-[31px] md:-left-[47px] top-0 p-1.5 sm:p-2 rounded-xl border border-[#30363d] bg-[#0d1117] text-[#238636] shadow-md">
+                    <GitCommit size={16} className="sm:w-[18px] sm:h-[18px]" />
                   </div>
 
                   {/* CARD KONTEN UTAMA (GitHub Dark Box) */}
-                  <div className="bg-[#0d1117] border border-[#30363d] hover:border-[#8b949e]/50 rounded-2xl p-6 md:p-8 space-y-6 transition-all duration-200 shadow-xl">
+                  <div className="bg-[#0d1117] border border-[#30363d] hover:border-[#8b949e]/50 rounded-2xl p-5 sm:p-6 md:p-8 space-y-5 md:space-y-6 transition-all duration-200 shadow-xl">
                     
                     {/* Header Card */}
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#30363d] pb-5">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4 border-b border-[#30363d] pb-4 md:pb-5">
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2">
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] pt-1">{exp.role}</h3>
-                        <p className="text-sm font-semibold text-[#8b949e]">{exp.company}</p>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#f0f6fc] pt-1">{exp.role}</h3>
+                        <p className="text-xs sm:text-sm font-semibold text-[#8b949e]">{exp.company}</p>
                       </div>
 
                       {/* Info Waktu & Lokasi */}
-                      <div className="text-left md:text-right text-xs font-mono text-[#8b949e] space-y-1">
+                      <div className="text-left md:text-right text-[11px] sm:text-xs font-mono text-[#8b949e] space-y-1">
                         <div className="flex items-center md:justify-end gap-1.5 text-[#c9d1d9]">
                           <Calendar size={13} className="text-[#8b949e]" />
                           <span>{exp.period}</span>
@@ -183,44 +172,30 @@ export default function Experience() {
                     </div>
 
                     {/* Ringkasan Peran */}
-                    <p className="text-[#c9d1d9] text-sm md:text-base leading-relaxed">
+                    <p className="text-[#c9d1d9] text-xs sm:text-sm md:text-base leading-relaxed">
                       {exp.shortSummary}
                     </p>
 
-                    {/* Key Stats Box (GitHub Sub-canvas Box) */}
-                    <div className="grid grid-cols-3 gap-3 pt-1">
-                      {exp.keyStats.map((stat, idx) => (
-                        <div key={idx} className="bg-[#161b22] border border-[#30363d] rounded-xl p-3.5 text-center">
-                          <div className="text-lg md:text-2xl font-bold text-[#f0f6fc] font-mono">
-                            {stat.value}
-                          </div>
-                          <div className="text-[10px] text-[#8b949e] font-mono tracking-wider uppercase mt-0.5">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
                     {/* Soft Skill Framing Quote */}
                     {exp.framingQuote && (
-                      <div className="p-4 rounded-xl bg-[#161b22] border border-[#30363d] text-xs text-[#8b949e] italic">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#161b22] border border-[#30363d] text-xs text-[#8b949e] italic">
                         "{exp.framingQuote}"
                       </div>
                     )}
 
                     {/* Tech Badges & Action Button */}
-                    <div className="pt-4 border-t border-[#30363d] flex flex-wrap items-center justify-between gap-4">
+                    <div className="pt-3 sm:pt-4 border-t border-[#30363d] flex flex-wrap items-center justify-between gap-3 sm:gap-4">
                       
-                      {/* Tech Badges (GitHub Topic Pills) */}
+                      {/* Tech Badges */}
                       <div className="flex flex-wrap gap-1.5 max-w-xl">
                         {exp.tags.map((tag, idx) => (
-                          <span key={idx} className="text-[11px] font-mono bg-[#388bfd]/10 border border-[#388bfd]/30 text-[#58a6ff] px-2.5 py-0.5 rounded-full hover:bg-[#388bfd]/20 transition-colors">
+                          <span key={idx} className="text-[10px] sm:text-[11px] font-mono bg-[#388bfd]/10 border border-[#388bfd]/30 text-[#58a6ff] px-2.5 py-0.5 rounded-full">
                             {tag}
                           </span>
                         ))}
                       </div>
 
-                      {/* Button Action (GitHub Commit Green Button) */}
+                      {/* Button Action */}
                       {exp.hasDetailModal && (
                         <button
                           onClick={() => setSelectedModalData(exp)}
@@ -243,7 +218,7 @@ export default function Experience() {
 
       </div>
 
-      {/* MODAL POPUP (GitHub Modal Dark Sheet) */}
+      {/* MODAL POPUP */}
       <AnimatePresence>
         {selectedModalData && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/75 backdrop-blur-sm">
@@ -252,28 +227,28 @@ export default function Experience() {
               initial={{ opacity: 0, scale: 0.96, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 15 }}
-              className="bg-[#0d1117] border border-[#30363d] rounded-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 space-y-8 shadow-2xl relative text-[#c9d1d9]"
+              className="bg-[#0d1117] border border-[#30363d] rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-5 sm:p-6 md:p-8 space-y-6 shadow-2xl relative text-[#c9d1d9]"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedModalData(null)}
-                className="absolute top-6 right-6 p-1.5 rounded-lg bg-[#21262d] border border-[#30363d] text-[#8b949e] hover:text-[#f0f6fc] hover:border-[#8b949e] transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-1.5 rounded-lg bg-[#21262d] border border-[#30363d] text-[#8b949e] hover:text-[#f0f6fc] transition-colors cursor-pointer"
               >
                 <X size={16} />
               </button>
 
               {/* Modal Header */}
-              <div className="space-y-2 border-b border-[#30363d] pb-6 pr-10">
-                <h3 className="text-2xl font-bold text-[#f0f6fc] pt-1">{selectedModalData.role}</h3>
+              <div className="space-y-1.5 border-b border-[#30363d] pb-5 pr-10">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#f0f6fc]">{selectedModalData.role}</h3>
                 <p className="text-xs text-[#8b949e] font-mono">{selectedModalData.company} — {selectedModalData.period}</p>
               </div>
 
               {/* Loop Sub-Projects */}
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {selectedModalData.subProjects.map((sub, idx) => (
-                  <div key={idx} className="bg-[#161b22] border border-[#30363d] rounded-xl p-5 md:p-6 space-y-4">
+                  <div key={idx} className="bg-[#161b22] border border-[#30363d] rounded-xl p-4 sm:p-5 space-y-3.5">
                     
-                    <h4 className="text-base font-bold text-[#f0f6fc]">
+                    <h4 className="text-sm sm:text-base font-bold text-[#f0f6fc]">
                       {sub.title}
                     </h4>
 
@@ -284,10 +259,10 @@ export default function Experience() {
 
                     {/* Alur Kerja Teknikal */}
                     <div className="space-y-2 pt-1">
-                      <div className="text-xs font-mono font-semibold text-[#58a6ff] flex items-center gap-1.5">
+                      <div className="text-xs font-mono font-semibold text-[#58a6ff]">
                         Alur Kerja Teknikal:
                       </div>
-                      <ul className="space-y-2 pl-2">
+                      <ul className="space-y-1.5 pl-2">
                         {sub.flow.map((step, stepIdx) => (
                           <li key={stepIdx} className="text-xs text-[#c9d1d9] flex items-start gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#3fb950] shrink-0 mt-1.5" />
