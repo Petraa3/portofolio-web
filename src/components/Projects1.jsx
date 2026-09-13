@@ -44,7 +44,7 @@ export default function Projects1() {
 
       // Dynamic import — baru di-download saat kamera dinyalakan
       import('../utils/yoloInference').then(({ loadYoloModel, detectObjects }) => {
-        loadYoloModel('/models/yolo26s.onnx')
+        loadYoloModel('/yolo26s.onnx')
           .then(() => {
             setIsModelLoaded(true);
 
@@ -223,7 +223,7 @@ export default function Projects1() {
                   <span className={isModelLoaded ? "text-amber-400 font-bold" : "text-amber-400"}>
                     {isModelLoaded 
                       ? "ONNX Model Ready & Inferencing" 
-                      : modelLoadingError || "Memuat Model ONNX (/models/best.onnx)..."}
+                      : modelLoadingError || "Memuat Model ONNX"}
                   </span>
                 </div>
 
