@@ -65,7 +65,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-blue-600/20 to-purple-600/20 opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               
               <img 
-                src="../src/assets/profile.png" 
+                src="/profile.png" 
                 alt="Petra Andhika Natanael" 
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
