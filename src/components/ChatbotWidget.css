@@ -1,0 +1,133 @@
+/* Container pembungkus di pojok bawah/atas */
+.petra-trigger-wrapper {
+  position: fixed;
+  top: 9%;
+  right: 5%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Container Popup Window Chatbot */
+.petra-chat-popup {
+  position: fixed;
+  top: calc(9% + 86px);
+  right: 5%;
+  width: 480px;
+  max-width: 90vw;
+  height: 78vh;
+  max-height: 720px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: petraPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes petraPopIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Tooltip / Text Bubble Ajakan */
+.petra-tooltip {
+  background: rgba(19, 17, 28, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #F3F4F6;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: floatTooltip 3s ease-in-out infinite;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.petra-tooltip .sparkle {
+  display: inline-block;
+  animation: spinSparkle 4s linear infinite;
+}
+
+/* Tombol Floating AI */
+.petra-floating-btn {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #A78BFA 0%, #6D28D9 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatBtn 4s ease-in-out infinite;
+}
+
+.petra-floating-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.7);
+}
+
+.petra-floating-btn.open {
+  animation: none;
+  background: #191426;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+.btn-icon {
+  font-size: 26px;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.petra-floating-btn:hover .btn-icon {
+  transform: scale(1.15);
+}
+
+/* Animasi Pulse Wave / Radar Gelombang */
+.pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(167, 139, 250, 0.4);
+  animation: ringPulse 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  z-index: 1;
+}
+
+.pulse-ring.delay {
+  animation-delay: 1.25s;
+}
+
+.petra-floating-btn.open .pulse-ring {
+  display: none;
+}
+
+/* Keyframes Animasi */
+@keyframes floatBtn {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floatTooltip {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes ringPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes spinSparkle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
