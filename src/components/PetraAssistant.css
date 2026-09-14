@@ -1,25 +1,25 @@
 .petra-widget {
-  --bg-gradient-main: radial-gradient(circle at 50% 20%, #3B1380 0%, #180B30 50%, #090514 100%);
-  --bg-header-glass: rgba(19, 17, 28, 0.7);
-  --bg-card-dark: #13111C;
-  --bg-card-hover: #1A1626;
-  --bg-bubble-user: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
-  --bg-bubble-assistant: rgba(26, 22, 38, 0.85);
-  --text-main: #F3F4F6;
-  --text-muted: #9CA3AF;
+  --bg-gradient-main: #F7F7F8;
+  --bg-header-glass: rgba(255, 255, 255, 0.85);
+  --bg-card-dark: #FFFFFF;
+  --bg-card-hover: #F3F4F6;
+  --bg-bubble-user: #FF7722;
+  --bg-bubble-assistant: #FFFFFF;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
   --text-white: #FFFFFF;
-  --accent-purple: #A78BFA;
-  --accent-purple-glow: #8B5CF6;
-  --border-color: rgba(139, 92, 246, 0.18);
-  --border-focus: #A78BFA;
+  --accent-purple: #FF7722;
+  --accent-purple-glow: #F97316;
+  --border-color: #E5E7EB;
+  --border-focus: #FF7722;
   --success: #10B981;
   --warning: #F59E0B;
   --danger: #EF4444;
   --radius-xl: 20px;
   --radius-lg: 14px;
   --radius-md: 10px;
-  --shadow-purple-glow: 0 10px 30px -5px rgba(139, 92, 246, 0.3);
-  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-purple-glow: 0 4px 20px -2px rgba(255, 119, 34, 0.15);
+  --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   height: 100%;
@@ -49,19 +49,19 @@
 .petra-widget .brand-avatar {
   width: 38px; height: 38px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #A78BFA 0%, #6D28D9 100%);
+  background: linear-gradient(135deg, #FF7722 0%, #E65100 100%);
   color: white; display: flex; align-items: center; justify-content: center;
   box-shadow: var(--shadow-purple-glow);
   flex-shrink: 0;
 }
 
 .petra-widget .brand-info h1 {
-  font-size: 16px; font-weight: 700; color: var(--text-white);
+  font-size: 16px; font-weight: 700; color: var(--text-main);
   display: flex; align-items: center; gap: 6px;
 }
 
 .petra-widget .badge-v {
-  font-size: 9px; background: rgba(139, 92, 246, 0.2); color: var(--accent-purple);
+  font-size: 9px; background: rgba(255, 119, 34, 0.1); color: var(--accent-purple);
   padding: 2px 7px; border-radius: 20px; font-weight: 700; border: 1px solid var(--border-color);
 }
 
@@ -69,8 +69,9 @@
 
 .petra-widget .status {
   display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600;
-  color: var(--accent-purple); background: rgba(26, 22, 38, 0.8);
+  color: var(--text-main); background: #FFFFFF;
   padding: 5px 10px; border-radius: 20px; border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
   flex-shrink: 0;
 }
 
@@ -99,8 +100,8 @@
   width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center;
   justify-content: center; flex-shrink: 0;
 }
-.petra-widget .msg.assistant .avatar { background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); border: 1px solid var(--border-color); }
-.petra-widget .msg.user .avatar { background: linear-gradient(135deg, #6D28D9, #4C1D95); color: var(--text-white); }
+.petra-widget .msg.assistant .avatar { background: rgba(255, 119, 34, 0.1); color: var(--accent-purple); border: 1px solid var(--border-color); }
+.petra-widget .msg.user .avatar { background: #374151; color: var(--text-white); }
 
 .petra-widget .bubble-wrapper { display: flex; flex-direction: column; gap: 4px; }
 .petra-widget .sender-name { font-size: 11px; font-weight: 600; color: var(--text-muted); margin-left: 4px; }
@@ -118,7 +119,7 @@
   background: var(--bg-bubble-user); color: var(--text-white);
   border-top-right-radius: 6px; box-shadow: var(--shadow-purple-glow);
 }
-.petra-widget .bubble.error { background: rgba(239, 68, 68, 0.12) !important; color: #FCA5A5 !important; border: 1px solid rgba(239, 68, 68, 0.3) !important; }
+.petra-widget .bubble.error { background: rgba(239, 68, 68, 0.12) !important; color: #DC2626 !important; border: 1px solid rgba(239, 68, 68, 0.3) !important; }
 
 .petra-widget .msg.assistant .bubble p { margin-bottom: 6px; }
 .petra-widget .msg.assistant .bubble p:last-child { margin-bottom: 0; }
@@ -132,7 +133,7 @@
   padding: 8px 14px; border-radius: var(--radius-lg); font-size: 12px; font-weight: 500;
   cursor: pointer; transition: var(--transition); box-shadow: var(--shadow-card);
 }
-.petra-widget .pill:hover { background: var(--bg-card-hover); border-color: var(--border-focus); color: var(--text-white); transform: translateY(-2px); }
+.petra-widget .pill:hover { background: var(--bg-card-hover); border-color: var(--border-focus); color: var(--accent-purple); transform: translateY(-2px); }
 
 .petra-widget .composer-container { padding: 12px 16px 14px; background: var(--bg-header-glass); backdrop-filter: blur(16px); border-top: 1px solid var(--border-color); }
 .petra-widget .composer {
@@ -144,7 +145,7 @@
 .petra-widget .input-wrapper { flex: 1; }
 .petra-widget textarea#petra-input {
   width: 100%; border: none; background: transparent; font-family: inherit; font-size: 14px;
-  color: var(--text-white); resize: none; max-height: 120px; outline: none; padding: 4px 0; line-height: 1.4;
+  color: var(--text-main); resize: none; max-height: 120px; outline: none; padding: 4px 0; line-height: 1.4;
 }
 .petra-widget textarea#petra-input::placeholder { color: var(--text-muted); }
 
@@ -153,14 +154,14 @@
   justify-content: center; height: 36px; transition: var(--transition); flex-shrink: 0;
 }
 .petra-widget .upload-btn {
-  background: rgba(139, 92, 246, 0.12); color: var(--accent-purple); border: 1px solid var(--border-color); width: 36px;
+  background: rgba(255, 119, 34, 0.08); color: var(--accent-purple); border: 1px solid var(--border-color); width: 36px;
 }
-.petra-widget .upload-btn:hover { background: var(--accent-purple-glow); color: var(--text-white); }
+.petra-widget .upload-btn:hover { background: var(--accent-purple); color: var(--text-white); }
 .petra-widget .send-btn {
-  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: var(--text-white);
+  background: var(--accent-purple); color: var(--text-white);
   padding: 0 14px; font-size: 13px; font-weight: 600; gap: 6px; box-shadow: var(--shadow-purple-glow);
 }
-.petra-widget .send-btn:hover { filter: brightness(1.1); }
+.petra-widget .send-btn:hover { filter: brightness(1.05); }
 .petra-widget .send-btn:disabled {
   background: var(--bg-card-dark); color: var(--text-muted); border: 1px solid var(--border-color);
   opacity: 0.6; cursor: not-allowed; box-shadow: none;
