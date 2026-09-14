@@ -205,8 +205,7 @@ export default function Projects1() {
               <span>⚠️</span> Catatan Performa Client-Side Inference:
             </p>
             <p className="leading-relaxed text-stone-300">
-              Mohon maaf apabila deteksi terasa kurang halus (delay/FPS terbatas) atau ada objek kecil yang terlewat. 
-              Inferensi model YOLO ini dieksekusi <strong>100% secara lokal di browser pengguna</strong> (menggunakan ONNX Runtime Web via CPU/WebGL) tanpa server GPU dedicated, sehingga performa menyesuaikan spesifikasi perangkat Anda.
+              Model berjalan langsung di browser Anda — mohon tunggu proses loading model di awal, dan maklum jika deteksi sedikit lag tergantung perangkat.
             </p>
           </div>
 
