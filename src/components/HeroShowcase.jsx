@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 // Taruh gambar di folder public/demo/
 const slides = [
-  { src: "/src/assets/download.jpg", label: "Object Tracking · TrackNetV3" },
-  { src: "/demo/yolo-waste.webp", label: "Detection · YOLO" },
-  { src: "/demo/ocr-expdate.webp", label: "OCR · Expiry Date" },
-  { src: "/demo/rag-chat.webp", label: "RAG Chatbot · Petra Assistant" },
+  { src: "/demo/python.jpg"},
+  { src: "/demo/deeplearning.jpg"},
+  { src: "/demo/ultralytics.png"},
+  { src: "/demo/download.jpg"},
+  { src: "/demo/ai_agent.webp"}
 ];
 
 export default function HeroShowcase() {
@@ -16,7 +17,7 @@ export default function HeroShowcase() {
     if (paused) return;
     const t = setInterval(() => {
       setActive((p) => (p + 1) % slides.length);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(t);
   }, [paused]);
 

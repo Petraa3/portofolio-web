@@ -60,7 +60,7 @@ export default function Hero() {
           className="lg:col-span-7 space-y-6 md:space-y-12"
         >
         <p className="text-xs sm:text-sm font-medium tracking-wider text-slate-500 uppercase !mb-8">
-          AI Engineer <span className="font-extrabold mx-3">|</span> Computer Vision & Deep Learning
+          AI Engineer <span className="font-extrabold mx-3">|</span> Computer Vision · LLM, RAG & AI Agents
         </p>
 
           {/* Nama */}
@@ -158,7 +158,7 @@ export default function Hero() {
                     className="absolute left-0 mt-2 w-44 rounded-2xl bg-slate-900/95 border border-slate-700/80 shadow-2xl backdrop-blur-xl z-50 p-1.5"
                   >
                     <a
-                      href="/cv_indo.pdf"
+                      href="/Petra_Andhika_Natanael_Indo_CV.pdf"
                       download="CV_Petra_Andhika_ID.pdf"
                       onClick={() => setShowCvMenu(false)}
                       className="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-slate-200 hover:bg-slate-800 rounded-xl transition-colors"
@@ -167,7 +167,7 @@ export default function Hero() {
                       <span className="text-[9px] text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">PDF</span>
                     </a>
                     <a
-                      href="/Petra_Andhika_English_version.pdf"
+                      href="/Petra_Andhika_Natanael_EN_CV.pdf"
                       download="Petra_Andhika_English_version.pdf"
                       onClick={() => setShowCvMenu(false)}
                       className="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-slate-200 hover:bg-slate-800 rounded-xl transition-colors"
@@ -186,7 +186,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
           style={{ opacity: heroOpacity }}
           className="lg:col-span-5 w-full"
         >

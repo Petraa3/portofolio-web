@@ -115,7 +115,7 @@ export default function Projects1() {
             <div className="lg:col-span-6 space-y-5 text-left">
               <div className="space-y-3">
                 <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white leading-tight">
-                  TrackNetV3 — Shuttlecock Tracking
+                  TrackNetV3 | Shuttlecock Tracking
                 </h3>
               </div>
 
@@ -173,6 +173,46 @@ export default function Projects1() {
           </div>
         </div>
 
+
+        {/* ================= barcode ================= */}
+        <div className="bg-[#1a2c38] border border-white/10 rounded-3xl p-5 sm:p-6 md:p-8 space-y-6 shadow-2xl">
+          <h3
+            style={{ fontFamily: "'Trebuchet MS', sans-serif" }}
+            className="text-lg sm:text-xl font-bold text-stone-100 border-b border-white/10 pb-5 sm:pb-6"
+          >
+            Sistem Pembaca Barcode, QR Code & Tanggal Kedaluwarsa untuk Gudang
+          </h3>
+
+          <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed">
+            Sistem computer vision untuk otomatisasi pengecekan stok gudang. Sistem ini mendeteksi barcode, QR code, dan tanggal kedaluwarsa pada kardus memakai satu model YOLO11 (3 kelas), lalu membaca kode dengan zxing-cpp dan exp date dengan OCR (PP-OCRv6). Setiap kode kemudian dipasangkan dengan exp date-nya dan disimpan sebagai data CSV.
+          </p>
+
+          {/* Galeri: geser ke samping */}
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3">
+            {[
+              { src: "/demo/03.png"},
+              { src: "/demo/04.png"},
+              { src: "/demo/05.png"},
+              { src: "/demo/06.png"},
+              { src: "/demo/07.png"},
+              { src: "/demo/08.png"},
+            ].map((img) => (
+              <figure key={img.src} className="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-[45%] space-y-2">
+                <a href={img.src} target="_blank" rel="noreferrer">
+                  <img
+                    src={img.src}
+                    alt={img.caption}
+                    loading="lazy"
+                    className="aspect-video w-full rounded-xl border border-white/10 bg-black/50 object-contain hover:border-white/30 transition-colors"
+                  />
+                </a>
+                <figcaption className="text-xs text-zinc-400">{img.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
+
         {/* ================= 2. INTERACTIVE AI VISION LAB ================= */}
         <div className="bg-[#1a2c38] border border-white/10 rounded-3xl p-5 sm:p-6 md:p-8 space-y-6 shadow-2xl relative overflow-hidden">
           
@@ -205,7 +245,7 @@ export default function Projects1() {
               <span>⚠️</span> Catatan Performa Client-Side Inference:
             </p>
             <p className="leading-relaxed text-stone-300">
-              Model berjalan langsung di browser Anda — mohon tunggu proses loading model di awal, dan maklum jika deteksi sedikit lag tergantung perangkat.
+              Model berjalan langsung di browser Anda. Mohon tunggu proses loading model di awal, dan maklum jika deteksi sedikit lag tergantung perangkat.
             </p>
           </div>
 

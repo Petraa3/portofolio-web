@@ -150,7 +150,7 @@ export default function Contact1() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {/* CV Versi Indonesia */}
                 <a
-                  href="/cv_indo.pdf" 
+                  href="/Petra_Andhika_Natanael_Indo_CV.pdf" 
                   download
                   className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-white/20 bg-white/10 hover:bg-white hover:text-black text-white font-mono-tech text-xs tracking-wider uppercase transition-all shadow-md active:scale-[0.99]"
                 >
@@ -160,7 +160,7 @@ export default function Contact1() {
 
                 {/* CV Versi Inggris */}
                 <a
-                  href="/Petra_Andhika_English_version.pdf" 
+                  href="/Petra_Andhika_Natanael_EN_CV.pdf" 
                   download
                   className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-white/20 bg-white/10 hover:bg-white hover:text-black text-white font-mono-tech text-xs tracking-wider uppercase transition-all shadow-md active:scale-[0.99]"
                 >
