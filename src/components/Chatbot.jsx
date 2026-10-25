@@ -6,7 +6,7 @@ import "./PetraAssistant.css";
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
 
 const QUICK_PROMPTS = [
-  { label: "👋 Kenalan dlibulu", text: "Halo, kenalan dulu yuk!" },
+  { label: "👋 Kenalan dulu", text: "Halo, kenalan dulu yuk!" },
   { label: "💼 Pengalaman & Skill", text: "Ceritakan pengalaman kerja dan skill utama Petra Andhika Natanael." },
   { label: "🖼️ Proyek AI Petra", text: "Proyek AI atau computer vision apa saja yang pernah dikerjakan Petra Andhika Natanael?" },
   { label: "🔬 Riset TrackNetV3", text: "Ceritakan riset skripsi TrackNetV3 milik Petra Andhike Natanael." },
